@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para ti ❤️</title>
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -229,6 +229,36 @@
         .favorite-card-back {
             background: white;
             transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+
+        .favorite-card-back h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .favorite-card-back p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .favorite-card {
+                height: 380px;
+            }
+
+            .favorite-card-back h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .favorite-card-back p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                max-height: 250px;
+            }
         }
 
         .favorite-card.visible {
@@ -635,7 +665,7 @@
             text-shadow: 2px 2px 4px rgba(139, 92, 246, 0.2);
         }
 
-        /* Photo Gallery (keeping for backwards compatibility but hiding) */
+        /* Photo Gallery */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -679,7 +709,7 @@
             object-fit: cover;
         }
 
-               /* ESTILOS NUEVOS: Modal de Propuesta */
+        /* ESTILOS NUEVOS: Modal de Propuesta */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -717,6 +747,41 @@
             box-shadow: 0 20px 60px rgba(139, 92, 246, 0.5);
             animation: scaleInModal 0.5s ease;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 30px 20px;
+                max-height: 85vh;
+                width: 95%;
+            }
+
+            .modal-heart {
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+            }
+
+            .modal-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .modal-content p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .modal-buttons {
+                gap: 15px;
+            }
+
+            .modal-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
         }
 
         @keyframes scaleInModal {
@@ -831,6 +896,8 @@
             box-shadow: 0 20px 60px rgba(139, 92, 246, 0.5);
             animation: scaleInModal 0.5s ease;
             max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .success-message.active {
@@ -845,6 +912,23 @@
         .success-message p {
             font-size: 1.3rem;
             line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .success-message {
+                padding: 30px 25px;
+                width: 90%;
+            }
+
+            .success-message h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .success-message p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
         }
     </style>
 </head>
